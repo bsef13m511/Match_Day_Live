@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "PlayerManagement";
+    Layout = "~/Views/Shared/teamLayout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+    <p>
+  
+    @Html.ActionLink("Create New Player", "addPlayer")
+</p>
+<table id="myTable" border="1" >
+    <tr>
+        <th>
+            Player Picture
+        </th>
+        <th>
+           Player Name
+        </th>
+        <th>
+            Player Number
+        </th>
+          <th>
+            Player Position
+        </th>
+        <th>
+            Matches Played
+        </th>
+        <th>
+            Goals Scored
+        </th>
+        <th>
+            Assists 
+        </th>
+        <th>
+            Goals Saved
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           <img src="~/PlayersPictures/@item.PlayerPicture" alt="player pic" width="100" height="100"/>
+        </td>
+        <td>
+            @item.PlayerName
+        </td>
+        <td>
+           @item.PlayerNumber
+        </td>
+         <td>
+           @item.PlayerPosition
+        </td>
+         <td>
+           @item.MatchesPlayed
+        </td>
+         <td>
+           @item.GoalScored
+        </td>
+         <td>
+           @item.Assists
+        </td>
+        <td>
+           @item.GoalsSaved
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPlayer", new { playerId=item.PlayerId}) |
+            @Html.ActionLink("Delete", "DeletePlayer", new { playerId=item.PlayerId })
+        </td>
+    </tr>
+}
+
+</table>
+
+    </div>

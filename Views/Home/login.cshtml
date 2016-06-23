@@ -1,0 +1,65 @@
+﻿@model MatchDayLive.Models.Team
+
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_layout1.cshtml";   
+}
+
+<div class="container-fluid">
+@using (Html.BeginForm("login", "Home", new { @class = "form-horizontal" }))
+{
+  <fieldset>
+    <legend>Login</legend>
+   
+      <div class="form-group" >
+        <div class="col-sm-6">
+            <div class="form-control">
+    	        @Html.TextBoxFor(model => model.TeamName, new { placeholder = "Team Name" } )        
+            </div>
+            <p class="error">
+              @Html.ValidationMessageFor(model => model.TeamName)
+             </p>
+        </div>
+    </div>
+   
+    <div>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+
+
+    <div class="form-group" >
+        <div class="col-sm-6">
+            <div class="form-control">
+                <span><i class="fa fa-lock"></i></span>  
+    	        @Html.TextBoxFor(model => model.Password, new { placeholder = "Password", type = "Password" } )      
+            </div>
+            <p class="error">
+              @Html.ValidationMessageFor(model => model.Password)
+                </p>
+        </div>
+    </div>
+
+      <br/>
+      <br/>
+      
+       <br/>
+       <br/>
+       <br/>
+     
+     
+
+    @Html.ActionLink("Not Registered? Sign up", "signup", "Home")
+     <br/>
+    @Html.ActionLink("Forget Password?", "forgetpwd", "Home")
+   
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+
+   
+  </fieldset>
+  
+}
+    </div>

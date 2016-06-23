@@ -1,0 +1,78 @@
+﻿@model MatchDayLive.Models.Team
+
+@{
+    ViewBag.Title = "EditDetails";
+    Layout = "~/Views/Shared/teamLayout.cshtml";
+}
+
+<h2>EditDetails</h2>
+
+<div class="container-fluid">
+@using (Html.BeginForm("EditDetails", "Home", FormMethod.Post, new { @class = "form-horizontal",role = "form" }))
+{
+  
+     @Html.HiddenFor(model => model.TeamName)
+     @Html.HiddenFor(model => model.TeamPicture)
+    
+  
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailId)
+    </div>
+    <div class="editor-field">
+            @Html.TextBoxFor(model => model.EmailId) 
+    </div>
+    <div>
+        <p class="error">
+           @Html.ValidationMessageFor(model => model.EmailId)
+        </p>
+     </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+    </div>
+    <div class="editor-field">
+            @Html.TextBoxFor(model => model.City) 
+    </div>
+    <div>
+        <p class="error">
+           @Html.ValidationMessageFor(model => model.City)
+        </p>
+     </div>
+
+                 
+    <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+    </div>
+    <div class="editor-field">
+            @Html.TextBoxFor(model => model.Password ) 
+    </div>
+    <div>
+        <p class="error">
+           @Html.ValidationMessageFor(model => model.Password)
+        </p>
+     </div>
+      
+      <div class="editor-field">
+            @Html.TextBoxFor(model => model.SecretQuestion) 
+    </div>
+    <div>
+        <p class="error">
+           @Html.ValidationMessageFor(model => model.SecretQuestion)
+        </p>
+     </div>
+    
+      <div class="editor-field">
+            @Html.TextBoxFor(model => model.SecretAnswer) 
+    </div>
+    <div>
+        <p class="error">
+           @Html.ValidationMessageFor(model => model.SecretAnswer)
+        </p>
+     </div>
+    
+     <div class="btn btn-submit">
+        <button type="submit" class="btn btn-default" id="b1">Edit</button>
+      </div>
+}
+
+</div>

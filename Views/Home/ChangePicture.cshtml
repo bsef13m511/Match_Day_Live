@@ -1,0 +1,24 @@
+﻿@model MatchDayLive.Models.Team
+@{
+    ViewBag.Title = "ChangePicture";
+    Layout = "~/Views/Shared/teamLayout.cshtml"; 
+
+}
+
+<center><h2>Upload new Profile Picture</h2> </center> 
+
+<div class="container-fluid">
+@using (Html.BeginForm("ChangePicture", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data", role = "form" }))
+{
+  
+
+       @Html.TextBoxFor(model => model.TeamPicture, new {type = "file" })
+        <p class="error">
+       @Html.ValidationMessageFor(model => model.TeamPicture)
+            </p>
+     <div class="btn btn-submit">
+        <button type="submit" class="btn btn-default" id="b1">Submit</button>
+      </div>
+}
+
+</div>

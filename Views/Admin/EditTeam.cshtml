@@ -1,0 +1,131 @@
+﻿@model MatchDayLive.Models.Team
+
+@{
+    ViewBag.Title = "EditTeam";
+    Layout = "~/Views/Shared/adminLayout.cshtml"; 
+}
+
+@using (Html.BeginForm())
+{
+  
+      <fieldset>
+        <legend>TEAM</legend>
+
+         @Html.HiddenFor(model=>model.TeamPicture);
+          @Html.HiddenFor(model=>model.AccountType);
+        <div >
+        <img src="~/TeamsPictures/@Model.TeamPicture" alt="Team Pic" width="150" height="150"/>
+         </div>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeamName)
+        </div>
+           <div class="editor-field">
+            @Html.TextBoxFor(model => model.TeamName)
+               <p class="error">
+               @Html.ValidationMessageFor(model => model.TeamName)
+           </p>
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+               
+        </div>
+
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Password)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.Password)
+           </p>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailId)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EmailId)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.EmailId)
+           </p>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.City)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.City)
+           </p>
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.SecretQuestion)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SecretQuestion)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.SecretQuestion)
+           </p>
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.SecretAnswer)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SecretAnswer)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.SecretAnswer)
+           </p>
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.MatchesPlayed)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MatchesPlayed)
+     
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.MatchesWon)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MatchesWon)
+         
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.MatchesLost)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MatchesLost)
+           
+           
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.MatchesDrawn)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MatchesDrawn)
+        
+           
+        </div>
+
+           <div class="editor-label">
+            @Html.LabelFor(model => model.TotalGoalsScored)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.TotalGoalsScored)
+           
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.TotalGoalsConceded)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.TotalGoalsConceded)
+           
+        </div>
+
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+

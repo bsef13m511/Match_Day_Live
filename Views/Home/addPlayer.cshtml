@@ -1,0 +1,116 @@
+﻿@model MatchDayLive.Models.Player
+
+@{
+    ViewBag.Title = "addPlayer";
+    Layout = "~/Views/Shared/teamLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+@using (Html.BeginForm("addPlayer", "Home", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data", role="form" }))
+{
+   @Html.ValidationSummary(true)
+  
+      <h2>Add Player</h2>
+   
+    <div class="form-group" >
+        <div class="col-sm-3">
+            <div class="form-control">
+    	        @Html.TextBoxFor(model => model.PlayerName , new { placeholder = "Player Name"} )        
+            </div>
+                <p class="error">
+                    @Html.ValidationMessageFor(model => model.PlayerName)
+                </p>
+            </div>
+    </div>
+
+    <div id ="result"></div>
+   
+       <div class="form-group" >
+         <div class="col-sm-3">
+            <div class="form-control">
+                 <span><i class="fa fa-envelope-o"></i></span>
+    	        @Html.TextBoxFor(model => model.PlayerPosition , new { placeholder = "Player Position"}) 
+           </div>
+                <p class="error">
+             @Html.ValidationMessageFor(model => model.PlayerPosition)
+                    </p>
+        </div>
+    </div>
+
+    <div class="form-group" >
+       <div class="col-sm-3">
+            <div class="form-control">
+    	        @Html.TextBoxFor(model => model.PlayerNumber , new { placeholder = "Player Number" } )                
+            </div>
+                                 <p class="error">
+             @Html.ValidationMessageFor(model => model.PlayerNumber)
+                    </p>
+        </div>
+    </div>
+
+                 
+   <div class="form-group" >
+    <div class="col-sm-3">
+
+            <div class="form-control">
+                <span><i class="fa fa-lock"></i></span>
+    	        @Html.TextBoxFor(model => model.MatchesPlayed, new { placeholder = "Matches Played" } )                    
+             </div>
+                        <p class="error">
+             @Html.ValidationMessageFor(model => model.MatchesPlayed)
+                    </p>
+        </div>
+    </div>
+    
+     <br/>
+
+      <div class="form-group" >
+       <div class="col-sm-3">
+            <div class="form-control">
+    	        @Html.TextBoxFor(model => model.GoalScored , new { placeholder = "Goals Scored" } )               
+            </div>
+                            <p class="error">
+             @Html.ValidationMessageFor(model => model.GoalScored)
+                    </p>
+        </div>
+    </div>
+        
+    <br/>
+
+    <div class="form-group" >
+    <div class="col-sm-3">
+            <div class="form-control">
+    	        @Html.TextBoxFor(model => model.Assists , new { placeholder = "Assists" } )               
+            </div>
+                        <p class="error">
+             @Html.ValidationMessageFor(model => model.Assists)
+                    </p>
+        </div>
+    </div>
+
+     
+       <div class="col-sm-3">
+            <div class="form-control">
+    	        @Html.TextBoxFor(model => model.GoalsSaved , new { placeholder = "Goals Saved" } )               
+            </div>
+                         <p class="error">
+             @Html.ValidationMessageFor(model => model.GoalsSaved)
+                    </p>
+        </div>
+   
+    <br/>
+  
+
+       @Html.TextBoxFor(model => model.PlayerPicture, new {type = "file" })
+        <p class="error">
+       @Html.ValidationMessageFor(model => model.PlayerPicture)
+            </p>
+
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" id="b1">Submit</button>
+      </div>
+
+}
+
+    </div>

@@ -1,0 +1,19 @@
+﻿@model MatchDayLive.Models.Team
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/teamLayout.cshtml";
+}
+
+<body>
+
+<div class="container-fluid">
+   <div class="col-sm-3">
+   <img src="~/TeamsPictures/@Model.TeamPicture" alt="~/TeamsPictures/temp.png" width="200" height="200"/>
+   
+  <h2>Welcome @Session["User"]</h2>
+    
+   </div>
+
+ </div>
+
+</body>

@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "TeamManagement";
+    Layout = "~/Views/Shared/adminLayout.cshtml"; 
+}
+
+@Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+            $('#myTable tbody').hide();
+            $('#b1').click(function () {
+                $('#myTable').html("<tr><th>Team Name</th><th>Password</th><th>Email Id</th><th>City</th><th></th></tr>");
+                var val = $('#inputBox').val();
+                $.getJSON("/admin/getTeamData?City=" + val, function (data) {
+                    $('#myTable tbody').show();
+                    $.each(data, function (index) {
+                        $("#myTable > tbody").append("<tr><td>" + data[index].TeamName + "</td> <td>" + data[index].Password + "</td> <td>" + data[index].EmailId + "</td> <td>" + data[index].City + "</td></tr>");
+                       
+                    });
+                });
+            });
+          
+        });
+    </script>
+
+<h2>Seach Teams Via City</h2>
+
+Enter City Name: <input type="text" id="inputBox"/> 
+<Button id="b1">Search</Button>
+<br/>
+<br/>
+<table id="myTable" border="1" >
+    <tr>
+        <th>
+           Team Name
+        </th>
+        <th>
+            Password
+        </th>
+          <th>
+            Email Id
+        </th>
+        <th>
+            City
+        </th>
+        <th></th>
+    </tr>
+
+
+</table>

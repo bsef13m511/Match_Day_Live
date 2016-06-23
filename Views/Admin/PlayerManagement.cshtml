@@ -1,0 +1,48 @@
+﻿@model MatchDayLive.Models.Player
+@{
+    ViewBag.Title = "PlayerManagement";
+    Layout = "~/Views/Shared/adminLayout.cshtml"; 
+}
+
+<h2>PlayerManagement</h2>
+
+<br/>
+<p>
+  
+    @Html.ActionLink("Create New Player", "CreatePlayer")
+</p>
+<table id="myTable" border="1" >
+    <tr>
+        <th>
+           Player Name
+        </th>
+        <th>
+            Player Position
+        </th>
+          <th>
+            Player Team
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           @item.PlayerName
+        </td>
+        <td>
+            @item.PlayerPosition
+        </td>
+        <td>
+           @item.TeamName
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditTeam", new { playerId=item.PlayerId}) |
+            @Html.ActionLink("Details", "TeamDetails", new { playerId=item.PlayerId }) |
+            @Html.ActionLink("Delete", "DeleteTeam", new { playerId=item.PlayerId })
+        </td>
+    </tr>
+}
+
+</table>

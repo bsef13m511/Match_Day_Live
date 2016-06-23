@@ -1,0 +1,64 @@
+﻿@model MatchDayLive.Models.Team
+
+@{
+    ViewBag.Title = "Team Details";
+    Layout = "~/Views/Shared/adminLayout.cshtml"; 
+}
+
+
+<h2>Team Details</h2>
+<fieldset>
+    <legend>Team</legend>
+     <div >
+        <img src="~/TeamsPictures/@Model.TeamPicture" alt="Team Pic" width="150" height="150"/>
+    </div>
+    <div >  
+      Team Name:  @Model.TeamName
+    </div>
+      <div >  
+       Team Password:  @Model.Password
+    </div>
+    <div >
+       City : @Model.City
+    </div>
+    
+    <div >
+        Email Id : @Model.EmailId
+    </div>
+    <div >
+        Secret Question : @Model.SecretQuestion
+    </div>
+    
+    <div >
+         Secret Answer  : @Model.SecretAnswer
+    </div>
+   
+      <div >
+        
+       Total Matches Played:  @Model.MatchesPlayed
+    </div>
+
+      <div >
+        
+       Total Matches Won :  @Model.MatchesWon
+    </div>
+      <div >
+        
+        Total Matches Lost:  @Model.MatchesLost
+    </div>
+      <div >
+        
+        Total Matches Drawn:  @Model.MatchesDrawn
+    </div>
+     <div >
+        
+        Total Matches Scored:  @Model.TotalGoalsScored
+    </div>
+     <div >  
+        Total Matches Conceded:  @Model.TotalGoalsConceded
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "TeamManagement")
+</p>

@@ -1,0 +1,92 @@
+﻿@model MatchDayLive.Models.Player
+@{
+    ViewBag.Title = "EditPlayer";
+    Layout = "~/Views/Shared/teamLayout.cshtml";
+}
+<h2>Edit Team</h2>
+@using (Html.BeginForm())
+{
+      <fieldset>
+        <legend>Player</legend>
+
+         @Html.HiddenFor(model=>model.PlayerPicture);
+          @Html.HiddenFor(model=>model.PlayerId);
+            @Html.HiddenFor(model=>model.TeamName);
+        <div >
+        <img src="~/PlayersPictures/@Model.PlayerPicture" alt="Team Pic" width="150" height="150"/>
+         </div>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlayerName)
+        </div>
+           <div class="editor-field">
+            @Html.TextBoxFor(model => model.PlayerName)
+               <p class="error">
+               @Html.ValidationMessageFor(model => model.PlayerName)
+           </p>
+        </div>
+           
+          <div class="editor-label">
+            @Html.LabelFor(model => model.PlayerPosition)
+                <div class="editor-field">
+            @Html.TextBoxFor(model => model.PlayerPosition)
+               <p class="error">
+               @Html.ValidationMessageFor(model => model.PlayerPosition)
+           </p>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlayerNumber)
+                <div class="editor-field">
+            @Html.TextBoxFor(model => model.PlayerNumber)
+               <p class="error">
+               @Html.ValidationMessageFor(model => model.PlayerNumber)
+           </p>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MatchesPlayed)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MatchesPlayed)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.MatchesPlayed)
+           </p>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GoalScored)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.GoalScored)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.GoalScored)
+           </p>
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.GoalsSaved)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.GoalsSaved)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.GoalsSaved)
+           </p>
+        </div>
+           <div class="editor-label">
+            @Html.LabelFor(model => model.Assists)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Assists)
+            <p class="error">
+             @Html.ValidationMessageFor(model => model.Assists)
+                </p>
+           
+        </div>
+           
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
