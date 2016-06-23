@@ -39,7 +39,7 @@ a:hover {
 
 <body>
 
-<div class="gallery" align="center">
+<div class="gallery" >
 	
 	<br />
 
@@ -47,7 +47,7 @@ a:hover {
        
 		@foreach (var m in Model)
          {
-             <img onmouseover="preview.src=img1.src" name="img1" src="~/TeamGallery/@m.PhotoTitle" alt="" />
+             <img onmouseover="preview.src=img1.src"  src="~/TeamGallery/@m.PhotoTitle" alt="" />
         }
        
 	</div><br/>
